@@ -44,6 +44,8 @@ class ModelTests(unittest.TestCase):
         self.assertEqual(self.model.divide(2, -2), -1)
         self.assertEqual(self.model.divide(-3, -3), 1)
         self.assertEqual(self.model.divide(-6, 3, -2), 1)
+        with self.assertRaises(DivisionByZeroException):
+            self.model.divide(1, 0)
 
 
 if __name__ == "__name__":

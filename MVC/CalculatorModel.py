@@ -3,6 +3,11 @@ class IllegalValueException(Exception):
         super().__init__(f"Cannot Perform operations on the received value! -- <{value}>")
 
 
+class DivisionByZeroException(Exception):
+    def __init__(self):
+        super().__init__("Cannot divide by zero!!!")
+
+
 class CalculatorModel:
 
     def add(self, *args):
@@ -25,6 +30,8 @@ class CalculatorModel:
         self.check_for_illegal_value(args)
         result = args[0]
         for arg in args[1:]:
+            if arg == 0:
+                raise DivisionByZeroException
             result /= arg
 
         return result
