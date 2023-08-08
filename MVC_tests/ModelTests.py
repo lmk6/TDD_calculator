@@ -2,7 +2,7 @@ import unittest
 from MVC.CalculatorModel import *
 
 
-class ModelTests(unittest.TestCase):
+class ModelTest(unittest.TestCase):
     def setUp(self) -> None:
         self.model = CalculatorModel()
 
@@ -48,5 +48,5 @@ class ModelTests(unittest.TestCase):
             self.model.divide(1, 0)
 
 
-if __name__ == "__name__":
+if __name__ == "__main__":
     unittest.main()
