@@ -10,6 +10,19 @@ class DivisionByZeroException(Exception):
 
 class CalculatorModel:
 
+    def compute_result(self, val1, val2, operator):
+        result = None
+        if operator == '+':
+            result = self.add(val1, val2)
+        elif operator == '-':
+            result = self.subtract(val1, val2)
+        elif operator == '*':
+            result = self.multiply(val1, val2)
+        elif operator == '/':
+            result = self.divide(val1, val2)
+
+        return result
+
     def add(self, *args):
         self.check_for_illegal_value(args)
         return sum(args)
